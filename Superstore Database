@@ -24,3 +24,31 @@ VALUES
     (13, 'Slow Cooker', 'Appliances', 49.95, 30, 4.7),
     (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
+
+-- 1. Select products and their displayed cost
+Select item_name, price
+From superstore
+-- 2. List cost from highest to lowest 
+Order by price desc;
+
+-- 1. Calculate the total amount of the cost of items in a department
+Select SUM(price), category
+From superstore
+-- 2. Only display Kitchen Supplies
+Where category='Kitchen Supplies';
+
+-- 1. Find the average rating of each department
+Select category, AVG(average_rating) 
+From superstore
+Group By category
+-- 2. Display ratings from lowest to highest
+Order by AVG(average_rating) asc;
+
+-- 1. List products, their departments, and average rating 
+Select category, item_name, average_rating
+From superstore
+-- 2 Limit deaprtments displayed to electroncis
+Where category='electronics'
+-- 3. Display products with lowest average rating first
+order by average_rating asc;
+
