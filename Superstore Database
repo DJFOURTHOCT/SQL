@@ -47,7 +47,7 @@ Order by AVG(average_rating) asc;
 -- 1. List products, their departments, and average rating 
 Select category, item_name, average_rating
 From superstore
--- 2 Limit deaprtments displayed to electroncis
+-- 2 Limit departments displayed to electroncis
 Where category='electronics'
 -- 3. Display products with lowest average rating first
 order by average_rating asc;
